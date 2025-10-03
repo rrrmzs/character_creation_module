@@ -1,26 +1,27 @@
 from random import randint
 
 
-def attack(char_name, char_class):
+def attack(char_name: str, char_class: str):
+    a, b = 0, 0
     if char_class == 'warrior':
         a, b = 3, 5
-    if char_class == 'mage':
+    if char_git class == 'mage':
         a, b = 5, 10
     if char_class == 'healer':
         a, b = -3, -1
     return f'{char_name} нанёс урон противнику равный {5 + randint(a, b)}'
 
 
-def defence(char_name, char_class):
+def defence(char_name: str, char_class: str):
     if char_class == 'warrior':
-        return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
+        return f'{char_name} блокировал {10 + randint(5, 10)} урона'
     if char_class == 'mage':
-        return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
+        return f'{char_name} блокировал {10 + randint(-2, 2)} урона'
     if char_class == 'healer':
         return f'{char_name} блокировал {10 + randint(2, 5)} урона'
 
 
-def special(char_name, char_class):
+def special(char_name: str, char_class: str):
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение'
                 f' «Выносливость {80 + 25}»')
@@ -32,7 +33,7 @@ def special(char_name, char_class):
                 f'«Защита {10 + 30}»')
 
 
-def start_training(char_name, char_class):
+def start_training(char_name: str, char_class: str):
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
